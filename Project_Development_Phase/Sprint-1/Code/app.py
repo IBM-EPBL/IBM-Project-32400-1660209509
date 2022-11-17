@@ -8,11 +8,18 @@ app=Flask(__name__)
 def notFound(e):
     return redirect('/dashboard')
 
-
-
 @app.route('/dashboard')
 def dashboard():
     return  render_template('dashboard.html')
+
+@app.route('/Login', methods=['POST',
+                              'GET'])
+def Login():
+    if request.method=='POST':
+        return dashboard()
+    else:
+        return render_template('login.html')
+
 
 
 
@@ -29,4 +36,4 @@ def report():
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run()
