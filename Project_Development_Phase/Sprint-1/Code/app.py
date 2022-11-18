@@ -12,8 +12,7 @@ def notFound(e):
 def dashboard():
     return  render_template('dashboard.html')
 
-@app.route('/Login', methods=['POST',
-                              'GET'])
+@app.route('/Login', methods=['POST',  'GET'])
 def Login():
     if request.method=='POST':
         return dashboard()
